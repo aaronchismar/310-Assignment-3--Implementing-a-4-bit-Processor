@@ -99,7 +99,7 @@ Enable different execution paths based on the opcode.
 Determine register operations.
 
 
-Instr Mem Module Test (values 1-8 loaded):
+Instruction Memory Module Test (values 1-8 loaded):
 <img width="1424" alt="Screenshot 2025-04-02 at 6 50 57 PM" src="https://github.com/user-attachments/assets/8e002766-e19e-47e8-ad1f-150bf203bd32" />
 
 
