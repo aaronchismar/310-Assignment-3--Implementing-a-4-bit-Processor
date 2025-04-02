@@ -96,7 +96,7 @@ Decoder Output Signals:
 
 Enable different execution paths based on the opcode.
 
-Determine register and ALU operations.
+Determine register operations.
 
 
 Instr Mem Module Test (values 1-8 loaded):
