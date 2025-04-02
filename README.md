@@ -58,6 +58,52 @@ S1, S0 (selects ALU operation)
 
 Cin (carry-in bit for arithmetic operations)
 
-Data Path Test:
+
+
+Instruction Memory Module:
+<img width="1432" alt="Screenshot 2025-04-02 at 6 43 13 PM" src="https://github.com/user-attachments/assets/1197c5aa-c5dd-45fb-8015-3f7019bdfecf" />
+Design Choices
+1. Program Counter (PC)
+A 4-bit counter that increments every clock cycle, holding the next instruction address.
+
+Controlled with pc-ctrl, which can modify the counter for jumps or conditional branching.
+
+2. Instruction Memory
+The instruction memory module stores instructions and outputs them to the Instruction Register (IR).
+
+Controlled with instr-mem-ctrl and instr-mem-input, which regulate memory interactions.
+
+3. Instruction Registers (IRs)
+Multiple 4-bit Instruction Registers (IRs) are used to hold different instruction segments.
+
+A decoder extracts control signals from the IR for execution.
+
+4. Logic Gates for Control
+The decoder logic processes the opcode and generates necessary control signals.
+
+Two NOT gates, an AND gate, and a driver are used for instruction validation and execution logic.
+
+Control Signals
+clk: Controls the timing of instruction execution.
+
+IR-ctrl: Enables the IR to latch the instruction.
+
+pc-ctrl: Modifies the PC for normal execution or jumps.
+
+instr-mem-ctrl & instr-mem-input: Manage instruction fetching.
+
+Decoder Output Signals:
+
+Enable different execution paths based on the opcode.
+
+Determine register and ALU operations.
+
+
+Instr Mem Module Test (values 1-8 loaded):
+<img width="1424" alt="Screenshot 2025-04-02 at 6 50 57 PM" src="https://github.com/user-attachments/assets/8e002766-e19e-47e8-ad1f-150bf203bd32" />
+
+
+Full Processor Test:
 <img width="1069" alt="Screenshot 2025-04-02 at 6 41 13 PM" src="https://github.com/user-attachments/assets/8baf5435-495d-4dff-9006-fe36a89e4510" />
 
+Testing for other files included in processor were completed in previous assignments.
